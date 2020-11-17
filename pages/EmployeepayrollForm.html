@@ -23,11 +23,32 @@
     </header>
     <div class="form-content">
         <form class="form" action="#" onsubmit="save(event);return false">
-        <div class="form-head">Employee Payroll Form</div>
-        <div class="row-content">
-            <label class="label text" for="name">Name: </label>
-            <input class="input" type="text" id="name" name="name" placeholder="Your name: eg. Ram" required>
-        </div>
+            <div class="form-head">Employee Payroll Form</div>
+            <div class="row-content">
+                <label class="label text" for="name">Name: </label>
+                <input class="input" type="text" id="name" name="name" placeholder="Your name: eg. Ram" required>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="profile">Profile image: </label>
+                <div class="profile-radio-content">
+                    <label>
+                        <input type="radio" id="profile1" name="profile" value="../assets/femaleTypeOne.png" required>
+                        <img class="profile" id="image1" src="../assets/femaleTypeOne.png">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile2" name="profile" value="../assets/maleTypeOne.webp" required>
+                        <img class="profile" id="image2" src="../assets/maleTypeOne.webp">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile3" name="profile" value="../assets/femaleTypeTwo.png" required>
+                        <img class="profile" id="image3" src="../assets/femaleTypeTwo.png">
+                    </label>
+                    <label>
+                        <input type="radio" id="profile1" name="profile" value="../assets/maleTypeTwo.jpg" required>
+                        <img class="profile" id="image4" src="../assets/maleTypeTwo.jpg">
+                    </label>
+                </div>
+            </div>
         </form>
     </div>
 </body>
