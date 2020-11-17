@@ -108,8 +108,9 @@ label {
     border: 0px solid #ccc;
     border-radius: 4px;
     resize: vertical;
+    border: 1px solid green;
 }
-
+/* UC3 */
 .profile-radio-content {
     display: flex;
     flex-direction: row;
