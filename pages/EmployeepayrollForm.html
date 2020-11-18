@@ -8,44 +8,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="../css/EmployeepayrollForm.css" rel="stylesheet">
     <link href="../assets/bridgelabz.jpg" rel="shortcut icon">
-    <script defer src="../js/"></script>
+    <script type="text/javascript" defer src="../js/EmployeePayrollForm.js"></script>
+    <script type="text/javascript" defer src="../js/EmployeePayroll.js"></script>
 </head>
 
 <body>
     <header class="header-content header">
         <div class="logo-content">
-            <img src="../assets/contactIcon.jpg" alt="Sample Logo" class="logo-content-img">
+            <img src="../assets/logo.png" alt="Sample Logo" class="logo-content-img">
             <div>
                 <span class="emp-text">EMPLOYEE</span><br>
                 <span class="emp-text emp-payroll">PAYROLL</span>
             </div>
         </div>
     </header>
-    <div class="form-content">
-        <form class="form" action="#" onsubmit="save(event);return false">
+    <div class="form-content" id="formId">
+        <form class="form" action="#" name="contact_form" method="post" onreset="resetForm()" onsubmit="save()">
             <div class="form-head">Employee Payroll Form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name: </label>
-                <input class="input" type="text" id="name" name="name" required>
+                <input class="input" type="text" id="name" name="name" placeholder="Your Name...">
+                <error-output class="text-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="profile">Profile image: </label>
                 <div class="profile-radio-content">
                     <label>
-                        <input type="radio" id="profile1" name="profile" value="../assets/femaleTypeOne.png" required>
-                        <img class="profile" id="image1" src="../assets/femaleTypeOne.png">
+                        <input type="radio" id="profile1" name="profile" value="../assets/Ellipse -4.png" required>
+                        <img class="profile" id="image1" src="../assets/Ellipse -4.png">
                     </label>
                     <label>
-                        <input type="radio" id="profile2" name="profile" value="../assets/maleTypeOne.webp" required>
-                        <img class="profile" id="image2" src="../assets/maleTypeOne.webp">
+                        <input type="radio" id="profile2" name="profile" value="../assets/Ellipse -5.png" required>
+                        <img class="profile" id="image2" src="../assets/Ellipse -5.png">
                     </label>
                     <label>
-                        <input type="radio" id="profile3" name="profile" value="../assets/femaleTypeTwo.png" required>
-                        <img class="profile" id="image3" src="../assets/femaleTypeTwo.png">
+                        <input type="radio" id="profile3" name="profile" value="../assets/Ellipse -7.png" required>
+                        <img class="profile" id="image3" src="../assets/Ellipse -7.png">
                     </label>
                     <label>
-                        <input type="radio" id="profile1" name="profile" value="../assets/maleTypeTwo.jpg" required>
-                        <img class="profile" id="image4" src="../assets/maleTypeTwo.jpg">
+                        <input type="radio" id="profile1" name="profile" value="../assets/Ellipse -8.png" required>
+                        <img class="profile" id="image4" src="../assets/Ellipse -8.png">
                     </label>
                 </div>
             </div>
@@ -77,7 +79,7 @@
                 <label class="label text" for="salary">Choose your salary: </label>
                 <input class="input" type="range" min="300000" max="500000" step="1000" value="400000" id="salary"
                     name="salary">
-                <output class="salary-output text" for="salary">4000000</output>
+                <error-output class="salary-error" for="text">400000</error-output>
             </div>
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date: </label>
@@ -154,13 +156,6 @@
             </div>
         </form>
     </div>
-    <script>
-        const salary = document.querySelector('#salary');
-        const output = document.querySelector('.salary-output');
-        salary.addEventListener('input', function () {
-            output.textContent = salary.value;
-        })
-    </script>
 </body>
 
 </html>
