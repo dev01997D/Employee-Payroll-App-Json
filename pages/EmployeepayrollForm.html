@@ -23,12 +23,12 @@
         </div>
     </header>
     <div class="form-content" id="formId">
-        <form class="form" action="#" name="contact_form" method="post" onreset="resetForm()" onsubmit="save()">
+        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
             <div class="form-head">Employee Payroll Form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name: </label>
                 <input class="input" type="text" id="name" name="name" placeholder="Your Name...">
-                <error-output class="text-error" for="text"></error-output>
+                <output class="text-error" for="text"></output>
             </div>
             <div class="row-content">
                 <label class="label text" for="profile">Profile image: </label>
@@ -63,15 +63,15 @@
             <div class="row-content">
                 <label class="label text" for="department">Department: </label>
                 <div>
-                    <input class="checkbox" type="checkbox" id="hr" value="HR">
+                    <input class="checkbox" type="checkbox" id="hr" name="department" value="HR">
                     <label class="text" for="hr">HR</label>
-                    <input class="checkbox" type="checkbox" id="sales" value="sales">
+                    <input class="checkbox" type="checkbox" id="sales" name="department" value="sales">
                     <label class="text" for="sales">Sales</label>
-                    <input class="checkbox" type="checkbox" id="finance" value="Finance">
+                    <input class="checkbox" type="checkbox" id="finance" name="department" value="Finance">
                     <label class="text" for="finance">Finance</label>
-                    <input class="checkbox" type="checkbox" id="engineer" value="Engineer">
+                    <input class="checkbox" type="checkbox" id="engineer" name="department" value="Engineer">
                     <label class="text" for="engineer">Engineer</label>
-                    <input class="checkbox" type="checkbox" id="others" value="Others">
+                    <input class="checkbox" type="checkbox" id="others" name="department" value="Others">
                     <label class="text" for="others">Others</label>
                 </div>
             </div>
@@ -84,7 +84,7 @@
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date: </label>
                 <div>
-                    <select name="Day" id="day">
+                    <select name="Day" id="day" name="day">
                         <option value="day">Day</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -118,7 +118,7 @@
                         <option value="30">30</option>
                         <option value="31">31</option>
                     </select>
-                    <select name="Month" id="month">
+                    <select name="Month" id="month" name="month">
                         <option value="month">Month</option>
                         <option value="Jan">January</option>
                         <option value="Feb">Febuary</option>
@@ -133,7 +133,7 @@
                         <option value="Nov">November</option>
                         <option value="Dec">December</option>
                     </select>
-                    <select name="Year" id="year">
+                    <select name="Year" id="year" name="year">
                         <option value="year">Year</option>
                         <option value="2016">2016</option>
                         <option value="2017">2017</option>
