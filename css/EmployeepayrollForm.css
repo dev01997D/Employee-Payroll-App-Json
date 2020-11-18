@@ -189,6 +189,16 @@ select {
     opacity: 1;
 }
 
+.text-error{
+    display: flex;
+    flex-flow: row nowrap;
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+    width: 10%;
+}
+
 @media only screen and (max-width: 960px) {
     .cancelButton {
         margin-left: 0px;
