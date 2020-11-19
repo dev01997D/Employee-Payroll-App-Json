@@ -82,3 +82,33 @@ const getSelectedValues = (propertValue) => {
     });
     return selectedItems;
 }
+
+//UC5: Reset all the value in the form on clicking reset button
+const resetForm = () => {
+    setValue('#name', '');
+    unSetSelectedValues('[name=profile]');
+    unSetSelectedValues('[name=gender]');
+    unSetSelectedValues('[name=department]');
+    setValue('#salary', '');
+    setValue('#notes', '');
+    setValue('#day', Day);
+    setValue('#month', Month);
+    setValue('#year', Year);
+}
+
+const unSetSelectedValues = (propertValue) => {
+    let allItems = document.querySelectorAll(propertValue);
+    allItems.forEach(item => {
+        item.checked = false;
+    });
+}
+
+const setTextValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
+}
+
+const setValue = (id, value) => {
+    const element = document.querySelector(id);
+    element.textContent = value;
+}
