@@ -36,7 +36,7 @@ const save = () => {
 //UC4: Storing in local storage
 function createAndUpdateStorage(employeePayrollData) {
     //localStorage.clear(); this can be used to clear all records from localStorage
-    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList")); //Converting string to JSON and storing
 
     if (employeePayrollList != undefined) {
         employeePayrollList.push(employeePayrollData);
