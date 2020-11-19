@@ -42,7 +42,7 @@ class EmployeePayrollData {
         this._notes = notes;
     }
 
-    get startDate() { return this._startDate; }
+    get startDate() { return empDate; }
     set startDate(startDate) {
         if (startDate.toLocaleDateString <= new Date().toLocaleDateString)
             this._startDate = startDate;

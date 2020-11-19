@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 const save = () => {
     try {
         let empPayrollData = createEmployeePayroll();
-        alert(empPayrollData.toString());
+        //alert(empPayrollData.toString());
         createAndUpdateStorage(empPayrollData);
     }
     catch (e) {
@@ -36,7 +36,7 @@ const save = () => {
 //UC4: Storing in local storage
 function createAndUpdateStorage(employeePayrollData) {
     //localStorage.clear(); this can be used to clear all records from localStorage
-    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList")); //Converting string to JSON and storing
+    let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
 
     if (employeePayrollList != undefined) {
         employeePayrollList.push(employeePayrollData);
@@ -44,7 +44,7 @@ function createAndUpdateStorage(employeePayrollData) {
     else {
         employeePayrollList = [employeePayrollData];
     }
-    alert(employeePayrollList.toString());
+    //alert(employeePayrollList.toString());
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
 }
 
@@ -81,34 +81,4 @@ const getSelectedValues = (propertValue) => {
         if (items.checked) selectedItems.push(items.value);
     });
     return selectedItems;
-}
-
-//UC5: Reset all the value in the form on clicking reset button
-const resetForm = () => {
-    setValue('#name', '');
-    unSetSelectedValues('[name=profile]');
-    unSetSelectedValues('[name=gender]');
-    unSetSelectedValues('[name=department]');
-    setValue('#salary', '');
-    setValue('#notes', '');
-    setValue('#day', Day);
-    setValue('#month', Month);
-    setValue('#year', Year);
-}
-
-const unSetSelectedValues = (propertValue) => {
-    let allItems = document.querySelectorAll(propertValue);
-    allItems.forEach(item => {
-        item.checked = false;
-    });
-}
-
-const setTextValue = (id, value) => {
-    const element = document.querySelector(id);
-    element.textContent = value;
-}
-
-const setValue = (id, value) => {
-    const element = document.querySelector(id);
-    element.textContent = value;
 }
