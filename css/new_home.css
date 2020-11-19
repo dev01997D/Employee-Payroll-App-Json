@@ -1,0 +1,55 @@
+html body {
+    margin: 10;
+    height: 100%;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+.header {
+    padding: 15px 0;
+    background-color: #ffffff;
+}
+
+/* we can use class name either as .header-content or .header */
+
+.header-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 0px solid green;
+}
+
+.logo-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border: 0px solid green;
+    width: 80%;
+}
+
+.logo-content-img {
+    border: 0px solid #42515F;
+    opacity: 1;
+}
+
+.emp-text {
+    text-align: left;
+    font: normal normal bold 20px/25px Roboto;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0px;
+    color: #82A70C;
+    text-transform: capitalize;
+}
+
+.emp-payroll {
+    text-align: left;
+    font: normal normal bold 20px/25px Montserrat;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0px;
+    color: #42515F;
+}
+
+* {
+    box-sizing: border-box;
+}
