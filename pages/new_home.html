@@ -28,11 +28,38 @@
         <!-- UC2 -->
         <div class="header-content">
             <div class="emp-details-text">Employee Details<div class="emp-count">10</div>
-                <a href="../pages/new_payroll_form_js.html" class="add-button">
-                    <img src="" alt="">Add User</a>
             </div>
-            <!--header-content-->
+            <a href="../pages/new_payroll_form_js.html" class="add-button">
+                <img src="" alt="">Add User</a>
         </div>
+        <!--header-content-->
+    </div>
+
+    <table id="display" class="table">
+        <!-- UC3 -->
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Start Date</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <td><img class="profile" alt="sample photo" src="../assets/Ellipse -4.png" alt=""></td>
+            <td>Devnandan Kumar</td>
+            <td>Male</td>
+            <td>
+                <div class="dept-table">HR</div>
+                <div class="dept-table">Finance</div>
+            </td>
+            <td>400000</td>
+            <td>16 Sept 2020</td>
+            <td><img id="1" onclick="remove(this)" alt="delete" src="../assets/delete-black-18dp.svg">
+                <img id="1" onclick="update(this)" alt="edit" src="../assets/create-black-18dp.svg"></td>
+        </tr>
+    </table>
 </body>
 
 </html>
