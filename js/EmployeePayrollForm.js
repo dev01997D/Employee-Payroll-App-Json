@@ -23,9 +23,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 const save = () => {
+    alert("Hello");
     try {
         let empPayrollData = createEmployeePayroll();
-        //alert(empPayrollData.toString());
+        alert(empPayrollData.toString());
         createAndUpdateStorage(empPayrollData);
     }
     catch (e) {
@@ -35,16 +36,16 @@ const save = () => {
 
 //UC4: Storing in local storage
 function createAndUpdateStorage(employeePayrollData) {
-    //localStorage.clear(); this can be used to clear all records from localStorage
+    //localStorage.clear(); //this can be used to clear all records from localStorage
     let employeePayrollList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
-
+    alert(employeePayrollData);
     if (employeePayrollList != undefined) {
         employeePayrollList.push(employeePayrollData);
     }
     else {
         employeePayrollList = [employeePayrollData];
     }
-    //alert(employeePayrollList.toString());
+    alert(employeePayrollList.toString());
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
 }
 
