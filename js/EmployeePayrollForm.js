@@ -20,10 +20,22 @@ window.addEventListener('DOMContentLoaded', (event) => {
     salary.addEventListener('input', function () {
         output.textContent = salary.value;
     });
+
+    const startdate = document.querySelector("#startDate");
+    const dateError = document.querySelector(".date-error");
+    startdate.addEventListener("input", function() {
+        let date = new Date(Date.parse(getInputValueById('#month') + " " + getInputValueById('#day') + " " + getInputValueById('#year')));
+        try {
+            (new EmployeePayrollData()).startDate = date;
+            dateError.textContent="";
+        } catch (e) {
+            dateError.textContent;
+        }
+    });
+
 });
 
 const save = () => {
-    alert("Hello");
     try {
         let empPayrollData = createEmployeePayroll();
         alert(empPayrollData.toString());
@@ -52,7 +64,8 @@ function createAndUpdateStorage(employeePayrollData) {
 //UC3: Create Employee payroll object
 const createEmployeePayroll = () => {
     let employeePayrollData = new EmployeePayrollData();
-    try {
+    employeePayrollData.id = createNewEmployeeId();
+   try {
         employeePayrollData.name = getInputValueById('#name');
     }
     catch (e) {
@@ -68,6 +81,14 @@ const createEmployeePayroll = () => {
     let date = getInputValueById('#month') + " " + getInputValueById('#day') + " " + getInputValueById('#year');
     employeePayrollData.startDate = new Date(date);
     return employeePayrollData;
+}
+
+//Generating employee id for all objects
+const createNewEmployeeId = () => {
+    let empID = localStorage.getItem("EmployeeID");
+    empID = !empID ? 1 : (parseInt(empID) + 1).toString();
+    localStorage.setItem("EmployeeID", empID);
+    return empID;
 }
 
 const getInputValueById = (id) => {

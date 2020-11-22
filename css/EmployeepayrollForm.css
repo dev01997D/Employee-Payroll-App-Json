@@ -189,7 +189,7 @@ select {
     opacity: 1;
 }
 
-.text-error{
+.text-error, .dateError{
     display: flex;
     flex-flow: row nowrap;
     margin-left: 10px;
@@ -198,6 +198,7 @@ select {
     color: red;
     width: 10%;
 }
+
 
 @media only screen and (max-width: 960px) {
     .cancelButton {
