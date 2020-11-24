@@ -1,48 +1,39 @@
-class EmployeePayrollData {
-
-    constructor() { }
-
-    //Getters and setters
-    get id() { return this._id; }
+class EmployeePayroll {
+    get id() {
+        return this._id;
+    }
     set id(id) {
         this._id = id;
     }
-
-    get name() { return this._name; }
+    get name() {
+        return this._name;
+    }
     set name(name) {
-        let nameRegEx = RegExp('^[A-Z]{1}[A-Za-z\\s]{2,}$');
-        if (nameRegEx.test(name)) {
-            this._name = name;
-        }
+        let nameRegex = RegExp("^[A-Z]{1}[A-Za-z ]{2,}$");
+        if (nameRegex.test(name)) this._name = name;
         else throw "Name is incorrect";
     }
-
-    get gender() { return this._gender; }
-    set gender(gender) {
-        this._gender = gender;
+    get profilePic() {
+        return this._profilePic;
     }
-
-    get profilePic() { return this._profilePic; }
     set profilePic(profilePic) {
         this._profilePic = profilePic;
     }
-
-    get department() { return this._department; }
-    set department(department) {
-        this._department = department;
+    get gender() {
+        return this._gender;
     }
-
-    get salary() { return this._salary; }
+    set gender(gender) {
+        this._gender = gender;
+    }
+    get salary() {
+        return this._salary;
+    }
     set salary(salary) {
         this._salary = salary;
     }
-
-    get notes() { return this._notes; }
-    set notes(notes) {
-        this._notes = notes;
+    get startDate() {
+        return this._startDate;
     }
-
-    get startDate() { return this._startDate; }
     set startDate(startDate) {
         let now = new Date();
         if (startDate > now) throw 'Start Date is in future Date!';
@@ -50,24 +41,22 @@ class EmployeePayrollData {
         if (diff / (1000 * 60 * 60 * 24) > 30) throw 'Start Date is beyond 30 days!';
         this._startDate = startDate;
     }
+    get department() {
+        return this._department;
+    }
+    set department(department) {
+        this._department = department;
+    }
+    get notes() {
+        return this._notes;
+    }
+    set notes(notes) {
+        this._notes = notes;
+    }
 
-    //Method
     toString() {
-        //Options is used to format the output of date into user requirement
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        const empDate = this.startDate === undefined ? "undefined" :
-            this.startDate.toLocaleDateString("en-US", options);
-        return "Id : " + this.id + ", Name : " + this.name + ", Profile pic : " + this.profilePic + ", gender : " + this.gender + ", Department : " + this.department + ", Salary : " + this.salary
-            + ", Notes : " + this.notes + ", Start Date : " + empDate;
+        const format = { year: "numeric", month: "short", day: "numeric" };
+        const date = this.startDate === undefined ? "undefined" : this.startDate.toLocaleDateString("en-IN", format);
+        return "id = " + this.id + ", name = " + this.name + ", profile Pic = " + this.profilePic + ", salary = " + this.salary + ", gender = " + this.gender + ", start date = " + date + ", department = " + this.department + ", notes = " + this.notes;
     }
 }
-empPayrollData = new EmployeePayrollData(1, 'Dev', 'Male', 'undefined', 'HR', 500000.00, 'This is new notes', new Date(2018, 11, 24));
-empPayrollData.id = 1;
-empPayrollData.name = 'Dev';
-empPayrollData.gender = 'Male';
-empPayrollData.profilePic = 'E:\employeePayrollJSONServer\assets\Ellipse -4.png';
-empPayrollData.department = 'HR';
-empPayrollData.salary = 500000.00;
-empPayrollData.notes = 'India is my country';
-empPayrollData.startDate = new Date();
-console.log(empPayrollData.toString());
