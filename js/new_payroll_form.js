@@ -3,7 +3,7 @@ let employeePayrollObj = {};
 
 window.addEventListener("DOMContentLoaded", (event) => {
     const name = document.querySelector("#name");
-    name.addEventListener("input", function() {
+    name.addEventListener("input", function () {
         if (name.value.length == 0) {
             setTextValue('.text-error', "");
             return;
@@ -18,12 +18,12 @@ window.addEventListener("DOMContentLoaded", (event) => {
 
     const salary = document.querySelector("#salary");
     const output = document.querySelector(".salary-output");
-    salary.addEventListener("input", function() {
+    salary.addEventListener("input", function () {
         output.textContent = salary.value;
     });
 
     const startdate = document.querySelector("#startDate");
-    startdate.addEventListener("input", function() {
+    startdate.addEventListener("input", function () {
         let date = new Date(Date.parse(getInputValueById('#month') + " " + getInputValueById('#day') + " " + getInputValueById('#year')));
         try {
             checkStartDate(new Date(Date.parse(date)));
@@ -76,7 +76,9 @@ const createNewEmployeeId = () => {
 }
 
 const setEmployeePayrollObject = () => {
-    if(!isUpdate) employeePayrollObj.id=createNewEmployeeId();
+    if (!isUpdate) {
+        employeePayrollObj.id = createNewEmployeeId();
+    }
     employeePayrollObj._name = getInputValueById('#name');
     employeePayrollObj._profilePic = getSelectedValues('[name=profile]').pop();
     employeePayrollObj._gender = getSelectedValues('[name=gender]').pop();
