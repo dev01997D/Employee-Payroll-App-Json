@@ -40,13 +40,39 @@ const save = (event) => {
     event.preventDefault();
     event.stopPropagation();
     try {
-        setEmployeePayrollObject();
-        createAndUpdateStorage();
-        resetForm();
-        window.location.replace(site_properties.home_page);
+        //Do the save operations accroding to requirement
+        if (site_properties.use_local_storage.match("true")) {
+            setEmployeePayrollObject();
+            createAndUpdateStorage();
+            resetForm();
+            window.location.replace(site_properties.home_page);
+        }
+        //for client-server architecture
+        else {
+            createOrUpdateEmployeePayroll();
+        }
     } catch (e) {
         return;
     }
+}
+
+//Do operations like post or put depending on requirement
+createOrUpdateEmployeePayroll = () => {
+    let postURL = site_properties.server_url;
+    let methodCall = "POST";
+    if (isUpdate) {
+        methodCall = "PUT";
+        postURL = postURL + employeePayrollObj.id.toString();
+    }
+
+    makeServiceCall(methodCall, postURL, true, employeePayrollObj)
+        .then(responseText => {
+            resetForm();
+            window.location.replace(site_properties.home_page);
+        })
+        .catch(error => {
+            throw error;
+        });
 }
 
 function createAndUpdateStorage() {
